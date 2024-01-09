@@ -31,6 +31,20 @@ class Program
             letterGrade = "F";
         }
 
+        
+        switch (intGrade % 10)
+        {
+        case >=7 :
+            letterGrade += "+";
+            break;
+        case <3 :
+            letterGrade += "-";
+            break;
+        default:
+            letterGrade += "";
+            break;
+        }
+
         Console.WriteLine($"\nYour letter grade is {letterGrade}.");
 
         if (intGrade >= 70)
