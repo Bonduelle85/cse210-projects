@@ -1,6 +1,7 @@
 public class PromptGenerator
 {
-    List<string> _prompts = new List<string>() {
+    List<string> _prompts = new List<string>() 
+    {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
         "What activity did I do today that brought me the least pleasure?",
