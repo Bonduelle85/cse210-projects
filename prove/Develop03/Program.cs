@@ -122,4 +122,8 @@ class Program
         MemorizeScripture(scripture);
     }
 
+
+//  char[] myValidOptions = {'0','1','2'};
+//    Console.WriteLine(myValidOptions.Contains('2'));    // this will output True
+//    Console.WriteLine(myValidOptions.Contains('F'));   // this will output False
 }
