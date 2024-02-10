@@ -32,7 +32,6 @@ public abstract class Goal
         return _points = points;
     }
 
-    
 
 
     public abstract void RecordEvent();

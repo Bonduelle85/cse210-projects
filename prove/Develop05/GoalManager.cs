@@ -260,7 +260,7 @@ public class GoalManager
             Console.WriteLine($"{index+1}. {menuItems[index]}");
         }
 
-        Console.Write("\nSelect a choice from the menu (1-6): ");
+        Console.Write("\nSelect a choice from the menu (1-8): ");
     }
 
     public void ClearGoalList()
