@@ -3,26 +3,27 @@
 public class TimeExercise : Exercise
 {
     // duration of the exercise
-    private int _timeDuration;
+    private int _timeDurationMin;
     
-    private bool _isCompleted = false;
+    private bool _isCompleted;
 
     public TimeExercise(
         string name, 
         string description,
-        int timeDuration
+        int timeDurationMin
         ) : base(name, description)
     {
-        _timeDuration = timeDuration;
+        _isCompleted = false;
+        _timeDurationMin = timeDurationMin;
     }
     public TimeExercise(
         string name, 
         string description,
-        int timeDuration,
+        int timeDurationMin,
         bool isCompleted
         ) : base(name, description)
     {
-        _timeDuration = timeDuration;
+        _timeDurationMin = timeDurationMin;
         _isCompleted = isCompleted;
     }
 
@@ -33,21 +34,16 @@ public class TimeExercise : Exercise
 
     public override void DoExercise()
     {
-        Console.Write("Get ready ");
-        base._animationMaker.ExerciseCountdown();
-        Console.WriteLine("Go! Time: ");
-        base._animationMaker.ExerciseCountdown(_timeDuration);
-        _isCompleted = true;
-        Console.WriteLine($"Congratulations, you completed {base.GetName()} ({_timeDuration} minutes)!!!");
+        Console.WriteLine($"\nYou completed {base.GetName()} ({_timeDurationMin} min)!");
     }
 
     override public string ExerciseInfo()
     {
-        return $"{base.ExerciseInfo} -> Time: {_timeDuration} min)";
+        return $"{base.ExerciseInfo()} => Time: {_timeDurationMin} min)";
     }
 
     public override string MakeSavingFormat()
     {
-        return $"TimeExercise#{base.MakeSavingFormat()}#{_timeDuration}#{_isCompleted}";
+        return $"TimeExercise#{base.MakeSavingFormat()}#{_timeDurationMin}#{_isCompleted}";
     }
 }

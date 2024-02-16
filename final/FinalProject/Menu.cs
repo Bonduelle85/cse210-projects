@@ -1,31 +1,31 @@
 public class Menu
 {
-    private int _selectedActionItem;
-    private int _selectedExerciseTypeItem;
+    private string _selectedActionItem;
+    private string _selectedExerciseTypeItem;
 
     public Menu()
     {
-        _selectedActionItem = 0;
-        _selectedExerciseTypeItem = 0;
+        _selectedActionItem = "0";
+        _selectedExerciseTypeItem = "0";
     }
 
     // selectedActionItem getter and setter
-    public int GetSelectedActionItem()
+    public string GetSelectedActionItem()
     {
         return _selectedActionItem;
     }
 
-    public int SetSelectedActionItem(int menuItem)
+    public string SetSelectedActionItem(string menuItem)
     {
         return _selectedActionItem = menuItem;
     }
 
     // selectedExerciseTypeItem getter and setter
-    public int GetSelectedExerciseTypeItem()
+    public string GetSelectedExerciseTypeItem()
     {
         return _selectedExerciseTypeItem;
     }
-    public int SetSelectedExerciseTypeItem(int menuItem)
+    public string SetSelectedExerciseTypeItem(string menuItem)
     {
         return _selectedExerciseTypeItem = menuItem;
     }
@@ -52,7 +52,7 @@ public class Menu
         }
 
         Console.Write("\nSelect a choice from the menu: ");
-        _selectedActionItem =  int.Parse(Console.ReadLine());
+        _selectedActionItem =  Console.ReadLine();
     }
 
     public void DisplayExerciseTypes()
@@ -73,7 +73,7 @@ public class Menu
             Console.WriteLine($"{index+1}. {menuItems[index]}");
         }
 
-        Console.Write("\nWhich type of exercise would you like to create [1-4]?");
-        _selectedExerciseTypeItem =  int.Parse(Console.ReadLine());
+        Console.Write("\nWhich type of exercise would you like to create [1-4]? ");
+        _selectedExerciseTypeItem =  Console.ReadLine();
     }
 }

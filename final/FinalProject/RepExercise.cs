@@ -9,7 +9,7 @@ public class RepExercise : Exercise
     private int _setTarget;
 
     // amount of completed sets
-    private int _setCompleted = 0;
+    private int _setCompleted;
 
     public RepExercise(
         string name, 
@@ -18,8 +18,21 @@ public class RepExercise : Exercise
         int setTarget
         ) : base(name, description)
     {
+        _setCompleted = 0;
         _repTarget = repTarget;
         _setTarget = setTarget;
+    }
+    public RepExercise(
+        string name, 
+        string description, 
+        int repTarget,
+        int setCompleted, 
+        int setTarget
+        ) : base(name, description)
+    {
+        _repTarget = repTarget;
+        _setTarget = setTarget;
+        _setCompleted = setCompleted;
     }
 
     override public bool IsCompleted()
@@ -39,11 +52,11 @@ public class RepExercise : Exercise
 
     override public string ExerciseInfo()
     {
-        return $"{base.ExerciseInfo} -> Sets: {_setCompleted}/{_setTarget} ({_repTarget} reps)";
+        return $"{base.ExerciseInfo()} => Sets: {_setCompleted}/{_setTarget} ({_repTarget} reps)";
     }
 
     public override string MakeSavingFormat()
     {
-        return $"RepExercise#{base.MakeSavingFormat()}#{_repTarget}#{_setTarget}#{IsCompleted()}";
+        return $"RepExercise#{base.MakeSavingFormat()}#{_setCompleted}#{_setTarget}#{_repTarget}";
     }
 }

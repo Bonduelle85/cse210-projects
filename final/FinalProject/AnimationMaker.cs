@@ -4,6 +4,7 @@ public class AnimationMaker
 {
     public void ShowLoading(int seconds = 3)
     {
+        Console.Clear();
         List<string> loadingStrings = new List<string>()
         {
             "...Loading...",
@@ -24,7 +25,6 @@ public class AnimationMaker
             string str = loadingStrings[i];
             Console.Write(str);
             Thread.Sleep(100);
-
             Console.Write("\r" + new string(' ', Console.BufferWidth) + "\r");
 
             i++;
@@ -42,7 +42,41 @@ public class AnimationMaker
         {
             Console.Write(i);
             Thread.Sleep(1000);
+            Console.Write("\r" + new string(' ', Console.BufferWidth) + "\r");
+        }
+    }
+
+    public void ShowSpinner(int seconds = 3)
+    {
+        List<Char> spinneChars = new List<char>()
+        {
+            '-',
+            '\\',
+            '|',
+            '/',
+            '-',
+            '\\',
+            '|',
+            '/'
+        };
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+
+        int i = 0;
+
+        while (DateTime.Now < endTime)
+        {
+            char ch = spinneChars[i];
+            Console.Write(ch);
+            Thread.Sleep(100);
             Console.Write("\b \b");
+
+            i++;
+
+            if (i >= spinneChars.Count)
+            {
+                i = 0;
+            }
         }
     }
 }

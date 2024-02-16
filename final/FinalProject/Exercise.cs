@@ -20,17 +20,17 @@ abstract public class Exercise
         return _name;
     }
     
-    abstract public bool IsCompleted();
+    public abstract bool IsCompleted();
 
-    abstract public void DoExercise();
+    public abstract void DoExercise();
 
-    virtual public string ExerciseInfo()
+    public virtual string ExerciseInfo()
     {
-        return $"[{_name}] -- |{_description}|";
+        return $"Name: [{_name}] => Description [{_description}]";
     }
 
     // This function generates a string to store class data in a file.
-   virtual public string MakeSavingFormat()
+   public virtual string MakeSavingFormat()
    {
      return $"{_name}#{_description}";
    }
